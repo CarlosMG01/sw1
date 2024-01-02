@@ -1,0 +1,13 @@
+# Visual Studio Code
+.vscode/
+
+# Archivos de logs
+*.log
+
+# Archivos de compilación
+dist/
+build/
+out/
+
+# Archivos .docx
+*.docx
