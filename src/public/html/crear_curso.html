@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Curso - E-academy</title>
+    <!-- Add your CSS file link here -->
+    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Nuevo Curso</h1>
+    </header>
+
+    <aside>
+        <!-- Sidebar del panel de administración -->
+        <button><img src="path/to/image" alt="Profile Picture"></button>
+        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
+        <button onclick="window.location.href='panel_administracion.html';">Panel de Administración</button>
+        <button onclick="window.location.href='crear_curso.html';">Crear Curso</button>
+        <button id="usuarios">Usuarios</button>
+        <button onclick="window.location.href='index.html';">Salir</button>
+    </aside>
+
+    <main>
+        <form action="destino_del_formulario" method="post" class="formulario-curso">
+            <div class="campo-formulario">
+                <label for="nombre-curso">Nombre del Curso</label>
+                <input type="text" id="nombre-curso" name="nombre-curso" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="profesores-curso">Profesores</label>
+                <input type="text" id="profesores-curso" name="profesores-curso" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="alumnos-curso">Alumnos</label>
+                <input type="text" id="alumnos-curso" name="alumnos-curso">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="descripcion-curso">Descripción</label>
+                <textarea id="descripcion-curso" name="descripcion-curso"></textarea>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="foro-curso">Foro</label>
+                <input type="checkbox" id="foro-curso" name="foro-curso">
+            </div>
+
+            <div class="campo-formulario">
+                <label>Permisos Especiales</label>
+                <!-- Ejemplo de desplegable de checkboxes, modifica según necesidad -->
+                <select multiple>
+                    <option value="permiso1">Permiso 1</option>
+                    <option value="permiso2">Permiso 2</option>
+                    <!-- Agregar más opciones según sea necesario -->
+                </select>
+            </div>
+
+            <button type="submit" class="boton-enviar">Crear Curso</button>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>

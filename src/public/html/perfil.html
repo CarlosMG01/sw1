@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - E-academy</title>
+    <!-- Add your CSS file link here -->
+    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Perfil</h1>
+    </header>
+
+    <aside>
+        <!-- Sidebar with buttons (same as previous pages) -->
+        <button><img src="path/to/image" alt="Profile Picture"></button>
+        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
+        <button onclick="window.location.href='cursos.html';">Cursos</button>
+        <button onclick="window.location.href='chats.html';">Chats</button>
+        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
+        <button onclick="window.location.href='index.html';">Salir</button>
+    </aside>
+
+    <main>
+        <section class="perfil-usuario">
+            <img src="path/to/foto-perfil.png" alt="Foto de Perfil" class="foto-perfil">
+            
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <!-- Lápiz para editar (Reemplazar con botones mediante JS) -->
+                <img src="path/to/lapiz.png" alt="Editar">
+            </div>
+
+            <div class="campo">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos">
+                <!-- Lápiz para editar (Reemplazar con botones mediante JS) -->
+                <img src="path/to/lapiz.png" alt="Editar">
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" readonly>
+            </div>
+
+            <div class="campo">
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" name="idioma">
+                    <option value="español">Español</option>
+                    <option value="inglés">Inglés</option>
+                </select>
+            </div>
+
+            <button onclick="window.location.href='modificar_contraseña.html';">Cambiar Contraseña</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>

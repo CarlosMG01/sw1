@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso - E-academy</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="path/to/your/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Contenido del Curso</h1>
+    </header>
+
+    <aside class="sidebar-izquierdo">
+        <!-- Sidebar izquierdo (igual que otras páginas) -->
+        <button><img src="path/to/image" alt="Profile Picture"></button>
+        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
+        <button onclick="window.location.href='cursos.html';">Cursos</button>
+        <button onclick="window.location.href='chats.html';">Chats</button>
+        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
+        <button onclick="window.location.href='index.html';">Salir</button>
+    </aside>
+
+    <aside class="sidebar-derecho">
+        <!-- Sidebar derecho específico del curso -->
+        <button onmouseover="mostrarInfoProfesor();">Profesor</button>
+        <button onclick="cambiarContenido('alumnos');">Alumnos</button>
+        <button onclick="cambiarContenido('videoclases');">Videoclases</button>
+        <button onclick="cambiarContenido('foro');">Foro</button>
+        <button onclick="cambiarContenido('anuncios');">Anuncios</button>
+        <button onclick="cambiarContenido('contenido');">Contenido</button>
+    </aside>
+
+    <main>
+        <!-- Contenido principal que cambia con JS -->
+        <section id="contenido-curso">
+            <h2>Contenido</h2>
+            <button>Contenido 1</button>
+            <button>Contenido 2</button>
+            <button>Contenido 3</button>
+            <button>Contenido 4</button>
+            <button>Contenido 5</button>
+            <button>Contenido 6</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <script>
+        // Aquí se agregarán las funciones de JavaScript para manejar la interactividad
+    </script>
+</body>
+</html>

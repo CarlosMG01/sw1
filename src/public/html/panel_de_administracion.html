@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - E-academy</title>
+    <!-- Add your CSS file link here -->
+    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+    </header>
+
+    <aside>
+        <!-- Sidebar with additional buttons for admin panel -->
+        <button><img src="path/to/image" alt="Profile Picture"></button>
+        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
+        <button onclick="window.location.href='cursos.html';">Cursos</button>
+        <button onclick="window.location.href='chats.html';">Chats</button>
+        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
+        <button onclick="window.location.href='crear_curso.html';">Crear Curso</button>
+        <button id="usuarios">Usuarios</button>
+        <button onclick="window.location.href='index.html';">Salir</button>
+    </aside>
+
+    <main>
+        <div class="search-bar">
+            <img src="path/to/lupa-logo.png" alt="Search">
+            <input type="text" placeholder="Buscar...">
+            <select>
+                <option value="filter1">Filtro 1</option>
+                <option value="filter2">Filtro 2</option>
+                <!-- Add more filter options as needed -->
+            </select>
+            <select>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+            <span>Elementos por página</span>
+        </div>
+
+        <section class="cursos-anclados">
+            <h2>Cursos Anclados</h2>
+            <button onclick="window.location.href='curso.html';">Curso Anclado 1</button>
+            <button onclick="window.location.href='curso.html';">Curso Anclado 2</button>
+            <button onclick="window.location.href='curso.html';">Curso Anclado 3</button>
+        </section>
+
+        <section class="otros-cursos">
+            <h2>Otros Cursos</h2>
+            <button onclick="window.location.href='curso.html';">Curso 1</button>
+            <button onclick="window.location.href='curso.html';">Curso 2</button>
+            <button onclick="window.location.href='curso.html';">Curso 3</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>
