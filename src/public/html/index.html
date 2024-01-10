@@ -4,32 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-academy Login</title>
-    <!-- Add your CSS file link here -->
-<!--   <link rel="stylesheet" href="path/to/your/css/style.css"> --> 
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
+
+<script>
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById('password');
+    var toggleIcon = passwordInput.nextElementSibling;
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    }
+}
+
+</script>
+
 <body>
-    <header>
-        <h1>Bienvenido a E-academy</h1>
-    </header>
 
     <main>
+        <div class="main">
+        <h1>Bienvenido a E-academy</h1>
+        <img src="../../assets/logo.png" alt="Logo E-ACADEMY" class="logo">
+        <br/>
         <form action="cursos.html" method="post">
             <label for="username">Nombre de usuario:</label>
             <input type="text" id="username" name="username" required>
-
+            
+            <div class="form-group password-container">
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-
+                <input type="password" id="password" name="password" required>
+                <i class="fas fa-eye-slash" onclick="togglePasswordVisibility()"></i>
+            </div>
             <button type="submit">Iniciar Sesión</button>
         </form>
 
         <p>
             <a href="contraseña_olvidada.html">He olvidado mi contraseña</a>
         </p>
+    </div>
     </main>
     
-    <footer>
-        <!-- Footer content -->
-    </footer>
 </body>
 </html>

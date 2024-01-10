@@ -4,64 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notificaciones - E-academy</title>
-    <!-- Add your CSS file link here -->
-    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
-</head>
-<body>
-    <header>
-        <h1>Notificaciones</h1>
-    </header>
 
-    <aside>
-        <!-- Sidebar with buttons (same as previous pages) -->
-        <button><img src="path/to/image" alt="Profile Picture"></button>
-        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
-        <button onclick="window.location.href='cursos.html';">Cursos</button>
-        <button onclick="window.location.href='chats.html';">Chats</button>
-        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
-        <button onclick="window.location.href='index.html';">Salir</button>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+
+<script>
+    function irA(tipo, cursoId) {
+        if (tipo === 'curso') {
+            window.location.href = 'curso.html?curso=' + cursoId;
+        } else if (tipo === 'chat') {
+            window.location.href = 'chat.html?curso=' + cursoId;
+        }
+    }
+</script>
+
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <aside class="sidebar">
+        <header>Menu</header>
+        <a href="perfil.html" class="active">
+            <span>Nombre Usuario</span>
+        </a>
+        <a href="cursos.html">
+            <i class="fas fa-book"></i>
+            <span>Cursos</span>
+        </a>
+        <a href="chats.html">
+            <i class="fas fa-comments"></i>
+            <span>Chats</span>
+        </a>
+        <a href="notificaciones.html">
+            <i class="fas fa-bell"></i>
+            <span>Notificaciones</span>
+        </a>
+        <a class="salir" href="index.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Salir</span>
+        </a>
     </aside>
 
-    <main>
-        <div class="search-bar">
-            <select>
-                <option value="filter1">Filtro 1</option>
-                <option value="filter2">Filtro 2</option>
-                <!-- Add more filter options as needed -->
-            </select>
-            <select>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-            </select>
-            <span>Elementos por página</span>
-        </div>
+    <div class="main">
+        <header>
+            <h1>Notificaciones</h1>
+        </header>
 
-        <section class="notificaciones-proximas">
-            <h2>Próximas</h2>
-            <button onclick="window.location.href='cursos.html';">Notificación Próxima 1</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Próxima 2</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Próxima 3</button>
-        </section>
-
-        <section class="notificaciones-recientes">
-            <h2>Recientes</h2>
-            <button onclick="window.location.href='cursos.html';">Notificación Recient 1</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Recient 2</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Recient 3</button>
-        </section>
-
-        <section class="notificaciones-anteriores">
-            <h2>Anteriores</h2>
-            <button onclick="window.location.href='cursos.html';">Notificación Anterior 1</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Anterior 2</button>
-            <button onclick="window.location.href='cursos.html';">Notificación Anterior 3</button>
-        </section>
-    </main>
-
-    <footer>
-        <!-- Footer content -->
-    </footer>
+        <main>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+                <img src="../../assets/lupa.png" alt="Search" class="lupa">
+                <select>
+                    <option value="filter1">Filtro 1</option>
+                    <option value="filter2">Filtro 2</option>
+                </select>
+                <select class="epp">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span>Elementos por página</span>
+            </div>
+    
+            <section class="anclados">
+                <h2>Anclados</h2>
+                <div id="anclados-container">
+                </div>
+            </section>
+    
+            <section class="otros">
+                <h2>Otros</h2>
+                <div id="otros-container">
+                    <button class="objeto" onclick="irA('curso',1);"><span>Notificacion curso 1</span></button>
+                    <button class="objeto" onclick="irA('curso',2);"><span>Notificacion curso 2</span></button>
+                    <button class="objeto" onclick="irA('curso',3);"><span>Notificacion curso 3</span></button>
+                    <button class="objeto" onclick="irA('chat', 1);"><span>Notificacion chat 1</span></button>
+                    <button class="objeto" onclick="irA('chat', 2);"><span>Notificacion chat 2</span></button>
+                    <button class="objeto" onclick="irA('chat', 3);"><span>Notificacion chat 3</span></button>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

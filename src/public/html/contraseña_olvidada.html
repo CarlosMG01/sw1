@@ -4,34 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperación de Contraseña</title>
-    <!-- Add your CSS file link here -->
-    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
+
+<script>
+    function togglePasswordVisibility(tipo) {
+        var passwordInput = document.getElementById(tipo);
+        var toggleIcon = passwordInput.nextElementSibling;
+    
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        }
+    }
+
+    function mandarCorreo() {
+        var email = document.getElementById('email').value;
+        // Mandar correo
+    }
+    
+</script>
+
 <body>
     <header>
         <h1>Recuperación de Contraseña</h1>
     </header>
 
     <main>
-        <form action="index.html" method="post">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="main">
+            <img src="../../assets/logo.png" alt="Logo E-ACADEMY" class="logo">
+            <br/>
 
-            <label for="code">Código de 6 dígitos:</label>
-            <input type="text" id="code" name="code" pattern="\d{6}" required>
+            <div class="centrado-container">
+                <div class="input-group">
+                    <label for="email">Correo Electrónico: </label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <button onclick="mandarCorreo()">Enviar código</button>
+            </div>
+            
+            
+                <form action="index.html" method="post">
+                <br/>
+                <label for="code">Código de 6 dígitos:</label>
+                <input type="text" id="code" name="code" pattern="\d{6}" required>
+                
+                <div class="form-group password-container">
+                    <label for="new-password">Nueva Contraseña:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('new-password')"></i>
+                </div>
 
-            <label for="new-password">Nueva Contraseña:</label>
-            <input type="password" id="new-password" name="new-password" required>
+                <div class="form-group password-container">
+                    <label for="confirm-password">Confirmar:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('confirm-password')"></i>
+                </div>
 
-            <label for="confirm-password">Confirmar Nueva Contraseña:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-
-            <button type="submit">Actualizar Contraseña</button>
-        </form>
+                <button type="submit">Actualizar Contraseña</button>
+            </form>
+        </div>
     </main>
-    
-    <footer>
-        <!-- Footer content -->
-    </footer>
+
 </body>
 </html>

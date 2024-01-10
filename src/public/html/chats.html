@@ -4,61 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chats - E-academy</title>
-    <!-- Add your CSS file link here -->
-    <!-- <link rel="stylesheet" href="path/to/your/css/style.css"> -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
-<body>
-    <header>
-        <h1>Chats</h1>
-    </header>
+<script>
+    function toggleAnclado(event, cursoId) {
+        event.stopPropagation();
+        const boton = event.target.parentNode;
+        const isAnclado = boton.classList.contains('anclado');
+        if (isAnclado) {
+            document.getElementById('otros-container').appendChild(boton);
+        } else {
+            document.getElementById('anclados-container').appendChild(boton);
+        }
+        boton.classList.toggle('anclado');
+    }
 
-    <aside>
-        <!-- Sidebar with buttons (same as cursos.html) -->
-        <button><img src="path/to/image" alt="Profile Picture"></button>
-        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
-        <button onclick="window.location.href='cursos.html';">Cursos</button>
-        <button onclick="window.location.href='chats.html';">Chats</button>
-        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
-        <button onclick="window.location.href='index.html';">Salir</button>
+    function irACurso(cursoId) {
+        window.location.href = 'curso.html?curso=' + cursoId;
+    }
+</script>
+
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <aside class="sidebar">
+        <header>Menu</header>
+        <a href="perfil.html" class="active">
+            <span>Nombre Usuario</span>
+        </a>
+        <a href="cursos.html">
+            <i class="fas fa-book"></i>
+            <span>Cursos</span>
+        </a>
+        <a href="chats.html">
+            <i class="fas fa-comments"></i>
+            <span>Chats</span>
+        </a>
+        <a href="notificaciones.html">
+            <i class="fas fa-bell"></i>
+            <span>Notificaciones</span>
+        </a>
+        <a class="salir" href="index.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Salir</span>
+        </a>
     </aside>
 
-    <main>
-        <div class="search-bar">
-            <img src="path/to/lupa-logo.png" alt="Search">
-            <input type="text" placeholder="Buscar...">
-            <select>
-                <option value="filter1">Filtro 1</option>
-                <option value="filter2">Filtro 2</option>
-                <!-- Add more filter options as needed -->
-            </select>
-            <select>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-            </select>
-            <span>Elementos por página</span>
-        </div>
+    <div class="main">
+        <header>
+            <h1>Chats</h1>
+        </header>
 
-        <section class="chats-anclados">
-            <h2>Chats Anclados</h2>
-            <!-- Pinned chats -->
-            <button onclick="window.location.href='chat.html';">Chat Anclado 1</button>
-            <button onclick="window.location.href='chat.html';">Chat Anclado 2</button>
-            <button onclick="window.location.href='chat.html';">Chat Anclado 3</button>
-        </section>
+        <main>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+                <img src="../../assets/lupa.png" alt="Search" class="lupa">
+                <select>
+                    <option value="filter1">Filtro 1</option>
+                    <option value="filter2">Filtro 2</option>
+                </select>
+                <select class="epp">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span>Elementos por página</span>
+            </div>
 
-        <section class="otros-chats">
-            <h2>Otros Chats</h2>
-            <!-- Other chats -->
-            <button onclick="window.location.href='chat.html';">Chat 1</button>
-            <button onclick="window.location.href='chat.html';">Chat 2</button>
-            <button onclick="window.location.href='chat.html';">Chat 3</button>
-        </section>
-    </main>
+            <section class="anclados">
+                <h2>Chats anclados</h2>
+                <div id="anclados-container">
+                </div>
+            </section>
 
-    <footer>
-        <!-- Footer content -->
-    </footer>
+            <section class="otros">
+                <h2>Otros chats</h2>
+                <div id="otros-container">
+                    <button class="objeto" onclick="irACurso(1);"><span>Chat 1</span><i class="fas fa-star" onclick="toggleAnclado(event, 1)"></i></button>
+                    <button class="objeto" onclick="irACurso(2);"><span>Chat 2</span><i class="fas fa-star" onclick="toggleAnclado(event, 2)"></i></button>
+                    <button class="objeto" onclick="irACurso(3);"><span>Chat 3</span><i class="fas fa-star" onclick="toggleAnclado(event, 3)"></i></button>
+                    <button class="objeto" onclick="irACurso(4);"><span>Chat 4</span><i class="fas fa-star" onclick="toggleAnclado(event, 4)"></i></button>
+                    <button class="objeto" onclick="irACurso(5);"><span>Chat 5</span><i class="fas fa-star" onclick="toggleAnclado(event, 5)"></i></button>
+                    <button class="objeto" onclick="irACurso(6);"><span>Chat 6</span><i class="fas fa-star" onclick="toggleAnclado(event, 6)"></i></button>
+
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

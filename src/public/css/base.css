@@ -1,0 +1,431 @@
+/* Estilos Generales del Contenido */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(-45deg, #accdff 0%, #9bcfff 100%);
+}
+
+.main {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin: 5% auto;
+    padding: 10px 50px;
+    border-radius: 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    max-width: 900px;
+    width: 900px;
+}
+
+.main h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main .logo {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mensaje {
+    max-width: 60%;
+    margin-bottom: 10px;
+    padding: 5px 10px; 
+    border-radius: 10px;
+    color: #000000; 
+    background-color: #ffffff;
+}
+
+.otro-usuario {
+    align-self: flex-start;
+}
+
+.usuario-actual {
+    align-self: flex-end;
+}
+
+.mensaje p {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Para los formularios */
+form {
+    margin: 0 auto;
+    width: 50%;
+}
+
+form label {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: right;
+    width: 180px; 
+}
+
+form input[type="text"], 
+form input[type="password"] {
+    width: 200px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+form button {
+    display: block;
+    margin-top: 20px;
+}
+
+form .password-container input {
+    display: inline-block;
+}
+
+form .password-container i {
+    font-size: 0.75em; 
+    cursor: pointer;
+    position: relative;
+    right: 40px; 
+    top: 2px; 
+}
+
+form button {
+    display: block;
+    margin: 20px auto;
+}
+
+p {
+    text-align: center;
+}
+
+/* Texto del Contenido */
+.main p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Imágenes */
+.main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botones */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Listas */
+.main ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.main ul li {
+    margin-bottom: 5px;
+}
+
+.main-chat {
+    margin-bottom: 25px;
+}
+
+.main-chat header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.main-chat header h1 {
+    margin: auto;
+    white-space: nowrap;
+}
+
+.main-chat header .foto-perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.main .foto-perfil {
+    margin: 0;
+}
+
+.chat-input-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.chat-input-container input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chat-input-container button {
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Separadores */
+.hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+/* Tarjetas o Elementos de Lista */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: left;
+    color: #707070;
+    font-size: 10pt;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 0; 
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.search-bar .lupa {
+    width: 12px;
+    height: auto;
+    position: relative;
+    right: 3.5%;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+}
+
+.campo label, .campo input {
+    margin-right: 5px;
+}
+
+.campo .lapiz {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.search-bar input[type="text"] {
+    flex-grow: 1; 
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    height: 0px;
+}
+
+.search-bar select {
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.search-bar span {
+    white-space: nowrap;
+}
+
+.search-bar .epp {
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Contenido */
+.objeto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.objeto i {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.objeto.selected {
+    background-color: #ff0;
+}
+
+.objeto .fas {
+    color: #ffa500;
+}
+
+.objeto .fas.fa-star {
+    color: gray;
+    
+}
+
+.objeto.anclado .fas.fa-star {
+    color: gold;
+}
+
+#info-profesor {
+    position: fixed; 
+    top: 3%;
+    right: 1%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 100;
+}
+
+#info-profesor p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.centrado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+}
+
+.campo-formulario {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.campo-formulario label {
+    min-width: 120px;
+    margin-right: 10px;
+}
+
+.campo-formulario input[type="text"],
+.campo-formulario textarea,
+.campo-formulario select {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.campo-formulario textarea {
+    height: 50px;
+    width: auto;
+}
+
+.pregunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;   
+}
+
+.pregunta h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.pregunta button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.respuesta {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.2s ease, opacity 0.5s ease;
+}
+
+.respuesta.visible {
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 0.2s ease, opacity 0.5s ease;
+}
+
+
+
+.faq article {
+    background-color: #e8e8e8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}

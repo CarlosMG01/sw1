@@ -4,88 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - E-academy</title>
-    <!-- Add your CSS file link here -->
-    <link rel="stylesheet" href="path/to/your/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
+
+<script>
+
+function toggleRespuesta(respuestaId) {
+    var respuesta = document.getElementById(respuestaId);
+    var icono = respuesta.previousElementSibling.querySelector('i');
+
+    respuesta.classList.toggle('visible');
+    if (respuesta.classList.contains('visible')) {
+        icono.classList.remove('fa-chevron-down');
+        icono.classList.add('fa-chevron-up');
+    } else {
+        icono.classList.remove('fa-chevron-up');
+        icono.classList.add('fa-chevron-down');
+    }
+}
+
+
+
+</script>
+
 <body>
-    <header>
-        <h1>FAQ</h1>
-    </header>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <aside class="sidebar">
+        <header>Menu</header>
+        <a href="perfil.html" class="active">
+            <span>Nombre Usuario</span>
+        </a>
+        <a href="cursos.html">
+            <i class="fas fa-book"></i>
+            <span>Cursos</span>
+        </a>
+        <a href="chats.html">
+            <i class="fas fa-comments"></i>
+            <span>Chats</span>
+        </a>
+        <a href="notificaciones.html">
+            <i class="fas fa-bell"></i>
+            <span>Notificaciones</span>
+        </a>
+        <a class="salir" href="index.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Salir</span>
+        </a>
+    </aside>
 
-    <main>
-        <div class="busqueda-faq">
-            <img src="path/to/lupa-logo.png" alt="Buscar" class="icono-buscar">
-            <input type="text" placeholder="Buscar en FAQs...">
-        </div>
+    <div class="main">
 
-        <section class="faq">
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 1</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 1...</p>
-                </div>
-            </article>
+        <header>
+            <h1>FAQs</h1>
+        </header>
 
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 2</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 2...</p>
-                </div>
-            </article>
+        <main>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+                <img src="../../assets/lupa.png" alt="Search" class="lupa">
 
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 3</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 3...</p>
-                </div>
-            </article>
+                <select class="epp">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span>Elementos por página</span>
+            </div>
 
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 4</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 4...</p>
-                </div>
-            </article>
-
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 5</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 5...</p>
-                </div>
-
-            <article>
-                <div class="pregunta">
-                    <h2>Pregunta 6</h2>
-                    <button><img src="path/to/flecha-abajo.png" alt="Desplegar"></button>
-                </div>
-                <div class="respuesta">
-                    <p>Respuesta a la Pregunta 6...</p>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <!-- Footer content -->
-    </footer>
-
-    <script>
-        // Aquí se agregarán las funciones de JavaScript para manejar el despliegue de respuestas
-    </script>
+            <section class="faq">
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-1')">
+                        <h2>Pregunta 1</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-1">
+                        Respuesta a la Pregunta 1...
+                    </div>
+                </article>
+<br>
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-2')">
+                        <h2>Pregunta 2</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-2">
+                        Respuesta a la Pregunta 2...
+                    </div>
+                </article>
+<br>
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-3')">
+                        <h2>Pregunta 3</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-3">
+                        Respuesta a la Pregunta 3...
+                    </div>
+                </article>
+<br>
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-4')">
+                        <h2>Pregunta 4</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-4">
+                        Respuesta a la Pregunta 4...
+                    </div>
+                </article>
+<br>
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-5')">
+                        <h2>Pregunta 5</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-5">
+                        Respuesta a la Pregunta 5...
+                    </div>
+                </article>
+<br>
+                <article>
+                    <div class="pregunta" onclick="toggleRespuesta('respuesta-6')">
+                        <h2>Pregunta 6</h2>
+                        <button><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="respuesta" id="respuesta-6">
+                        Respuesta a la Pregunta 6...
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

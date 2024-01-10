@@ -4,53 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso - E-academy</title>
-    <!-- Add your CSS file link here -->
-    <link rel="stylesheet" href="path/to/your/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/base.css">
 </head>
+
+<script>
+
+    function mostrarInfoProfesor() {
+    document.getElementById('info-profesor').style.display = 'block';
+    }
+
+    function ocultarInfoProfesor() {
+        document.getElementById('info-profesor').style.display = 'none';
+    }
+
+    function cambiarContenido(tipo) {
+    // Oculta todos los contenedores
+    document.getElementById('alumnos-container').style.display = 'none';
+    document.getElementById('videoclases-container').style.display = 'none';
+    document.getElementById('foro-container').style.display = 'none';
+    document.getElementById('anuncios-container').style.display = 'none';
+    document.getElementById('contenido-container').style.display = 'none';
+
+    // Muestra el contenedor seleccionado
+    document.getElementById(tipo + '-container').style.display = 'block';
+    }
+
+</script>
+
 <body>
-    <header>
-        <h1>Contenido del Curso</h1>
-    </header>
-
-    <aside class="sidebar-izquierdo">
-        <!-- Sidebar izquierdo (igual que otras páginas) -->
-        <button><img src="path/to/image" alt="Profile Picture"></button>
-        <button onclick="window.location.href='perfil.html';">Nombre Usuario</button>
-        <button onclick="window.location.href='cursos.html';">Cursos</button>
-        <button onclick="window.location.href='chats.html';">Chats</button>
-        <button onclick="window.location.href='notificaciones.html';">Notificaciones</button>
-        <button onclick="window.location.href='index.html';">Salir</button>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <aside class="sidebar">
+        <header>Menu</header>
+        <a href="perfil.html" class="active">
+            <span>Nombre Usuario</span>
+        </a>
+        <a href="cursos.html">
+            <i class="fas fa-book"></i>
+            <span>Cursos</span>
+        </a>
+        <a href="chats.html">
+            <i class="fas fa-comments"></i>
+            <span>Chats</span>
+        </a>
+        <a href="notificaciones.html">
+            <i class="fas fa-bell"></i>
+            <span>Notificaciones</span>
+        </a>
+        <a class="salir" href="index.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Salir</span>
+        </a>
     </aside>
 
-    <aside class="sidebar-derecho">
-        <!-- Sidebar derecho específico del curso -->
-        <button onmouseover="mostrarInfoProfesor();">Profesor</button>
-        <button onclick="cambiarContenido('alumnos');">Alumnos</button>
-        <button onclick="cambiarContenido('videoclases');">Videoclases</button>
-        <button onclick="cambiarContenido('foro');">Foro</button>
-        <button onclick="cambiarContenido('anuncios');">Anuncios</button>
-        <button onclick="cambiarContenido('contenido');">Contenido</button>
-    </aside>
+    
 
-    <main>
-        <!-- Contenido principal que cambia con JS -->
-        <section id="contenido-curso">
-            <h2>Contenido</h2>
-            <button>Contenido 1</button>
-            <button>Contenido 2</button>
-            <button>Contenido 3</button>
-            <button>Contenido 4</button>
-            <button>Contenido 5</button>
-            <button>Contenido 6</button>
-        </section>
-    </main>
+    <div class="main">
+        
+        <aside class="sidebar-2">
+            <button onmouseover="mostrarInfoProfesor();" onmouseout="ocultarInfoProfesor();"><i class="fas fa-chalkboard-teacher"></i> Profesor</button>
+            <div id="info-profesor" style="display: none;">
+                <p>Nombre: Álvaro Sánchez Picot</p>
+                <p>Correo: profesor@example.com</p>
+                <p>Despacho: D1.1.1</p>
+            </div>
+            
+            <button onclick="cambiarContenido('alumnos');"><i class="fas fa-users"></i> Alumnos</button>
+            <button onclick="cambiarContenido('videoclases');"><i class="fas fa-video"></i> Videoclases</button>
+            <button onclick="cambiarContenido('foro');"><i class="fas fa-comments"></i> Foro</button>
+            <button onclick="cambiarContenido('anuncios');"><i class="fas fa-bullhorn"></i> Anuncios</button>
+            <button onclick="cambiarContenido('contenido');"><i class="fas fa-book-open"></i> Contenido</button>
+        </aside>
 
-    <footer>
-        <!-- Footer content -->
-    </footer>
+        <header>
+            <h1>Nombre del curso</h1>
+        </header>
 
-    <script>
-        // Aquí se agregarán las funciones de JavaScript para manejar la interactividad
-    </script>
+        <main>
+            
+            <section id="contenido-curso">
+
+                    <div id="alumnos-container" style="display: none;">
+                        <button class="objeto">Alumno 1</button>
+                        <button class="objeto">Alumno 2</button>
+                    </div>
+                
+                    <div id="videoclases-container" style="display: none;">
+                        <button class="objeto">Videoclase 1</button>
+                        <button class="objeto">Videoclase 2</button>
+                    </div>
+                
+                    <div id="foro-container" style="display: none;">
+                        <button class="objeto">Tema del Foro 1</button>
+                        <button class="objeto">Tema del Foro 2</button>
+                    </div>
+                
+                    <div id="anuncios-container" style="display: none;">
+                        <button class="objeto">Anuncio 1</button>
+                        <button class="objeto">Anuncio 2</button>
+                    </div>
+                
+                    <div id="contenido-container">
+                        <button class="objeto">Contenido 1</button>
+                        <button class="objeto">Contenido 2</button>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>
