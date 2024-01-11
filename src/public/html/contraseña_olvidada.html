@@ -24,10 +24,21 @@
         }
     }
 
-    function mandarCorreo() {
-        var email = document.getElementById('email').value;
-        // Mandar correo
+    async function mandarCorreo() {
+    const email = document.getElementById('email').value;
+
+    const response = await fetch('/api/auth/solicitar-cambio-contraseña', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+    });
+
+    if (response.ok) {
+        alert('Correo enviado. Por favor, revisa tu bandeja de entrada.');
+    } else {
+        alert('Error al enviar el correo.');
     }
+}
     
 </script>
 
