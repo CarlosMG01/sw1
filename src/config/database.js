@@ -2,15 +2,14 @@ const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
     host: 'localhost',
-    user: 'tu_usuario',
-    database: 'tu_base_de_datos',
-    password: 'tu_contraseña',
+    user: 'a',
+    database: 'sw1',
+    password: 'a',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
 
-const pool = require('./path_to_your_db_pool'); // Asegúrate de tener el pool de conexión importado
 
 async function obtenerTodosLosUsuarios() {
     const [rows] = await pool.query('SELECT * FROM Usuarios');

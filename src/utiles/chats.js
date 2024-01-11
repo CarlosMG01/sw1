@@ -1,4 +1,4 @@
-const db = require('./database');
+const db = require('../config/database');
 
 async function crearChat(mensajes, usuario1, usuario2) {
     return await db.crearChat(mensajes, usuario1, usuario2);

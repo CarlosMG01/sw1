@@ -1,8 +1,7 @@
 const express = require('express');
 const path = require('path');
-const obtenerDatosRouter = require('./src/routes/obtener_datos.js');
+const obtenerDatosRouter = require('./routes/obtener_datos');
 const authRoutes = require('./authRoutes');
-
 
 
 const app = express();

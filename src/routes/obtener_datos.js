@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 // Importa aquí los controladores o la lógica necesaria
 
-const chatsController = require('./chats'); // Asegúrate de que este archivo exista y tenga las funciones necesarias
-const coursesController = require('./cursos'); // Asegúrate de tener este archivo
+const chatsController = require('../utiles/chats'); // Asegúrate de que este archivo exista y tenga las funciones necesarias
+const coursesController = require('../utiles/cursos'); // Asegúrate de tener este archivo
 
 // Ruta para obtener los cursos de un usuario
 router.get('/chats/:usuarioId', async (req, res) => {
